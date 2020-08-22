@@ -2,7 +2,7 @@ import { Operator } from '@typings/index';
 
 export const OPERATORS: Operator[] = [
   {
-    title: 'Beeline',
+    name: 'beeline',
     subTitle: 'Живи на яркой стороне!',
     img: '/assets/images/beeline.svg',
     codes: [
@@ -33,7 +33,7 @@ export const OPERATORS: Operator[] = [
     ],
   },
   {
-    title: 'Megafon',
+    name: 'megafon',
     subTitle: 'Выбор начинается с тебя!',
     img: '/assets/images/megafon.svg',
     codes: [
@@ -64,7 +64,7 @@ export const OPERATORS: Operator[] = [
     ],
   },
   {
-    title: 'MTS',
+    name: 'mts',
     subTitle: 'Ты знаешь, что можешь!',
     img: '/assets/images/mts.svg',
     codes: [
@@ -96,7 +96,7 @@ export const OPERATORS: Operator[] = [
     ],
   },
   {
-    title: 'Tele2',
+    name: 'tele2',
     subTitle: 'Ни слова больше!',
     img: '/assets/images/tele2.svg',
     codes: [
@@ -122,7 +122,7 @@ export const OPERATORS: Operator[] = [
     ],
   },
   {
-    title: 'Yota',
+    name: 'yota',
     subTitle: 'Честно - дешевле!',
     img: '/assets/images/yota.svg',
     codes: [999],

@@ -1,6 +1,4 @@
-<div>
-  <mat-toolbar>
-    {{ title }}
-  </mat-toolbar>
-  <app-main-page></app-main-page>
-</div>
+<mat-toolbar>
+  <span class="title" (click)="goToMainPage()">{{ title }}</span>
+</mat-toolbar>
+<router-outlet></router-outlet>

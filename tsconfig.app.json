@@ -10,7 +10,8 @@
       "@root/*": ["src/app/*"],
       "@services/*": ["src/app/services/*"],
       "@typings/*": ["src/app/typings/*"],
-      "@data/*": ["src/app/data/*"]
+      "@data/*": ["src/app/data/*"],
+      "@routes/*": ["src/app/routes/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

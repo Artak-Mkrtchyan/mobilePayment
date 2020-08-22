@@ -1,6 +1,6 @@
 export interface Operator {
   codes: number[];
-  title: string;
+  name: string;
   subTitle: string;
   img: string;
 }
