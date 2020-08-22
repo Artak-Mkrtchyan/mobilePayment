@@ -19,8 +19,8 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.operator.getOperators().subscribe((operators) => {
-      this.operators = operators;
+    this.operator.getOperators().subscribe((data) => {
+      this.operators = data.operators;
     });
   }
 }

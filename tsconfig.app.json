@@ -10,7 +10,6 @@
       "@root/*": ["src/app/*"],
       "@services/*": ["src/app/services/*"],
       "@typings/*": ["src/app/typings/*"],
-      "@data/*": ["src/app/data/*"],
       "@routes/*": ["src/app/routes/*"],
       "@helpers/*": ["src/app/helpers/*"]
     }

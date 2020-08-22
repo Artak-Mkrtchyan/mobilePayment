@@ -1,10 +1,16 @@
-<div class="form-wrapper">
+<div *ngIf="isLoaded" class="form-wrapper">
   <div class="form-header">
     <img [src]="operator.img" class="form-header__img" />
   </div>
 
   <div class="form-body">
-    <div [formGroup]="form" class="container form-container" fxLayout="column">
+    <form
+      [formGroup]="form"
+      #f="ngForm"
+      (ngSubmit)="fillBalance(f)"
+      class="container form-container"
+      fxLayout="column"
+    >
       <mat-form-field>
         <mat-label>Phone number</mat-label>
         <div class="tel-input-container">
@@ -45,7 +51,7 @@
         <mat-label>Amount</mat-label>
         <input
           matInput
-          placeholder="Input"
+          placeholder="Amount"
           maxlength="4"
           formControlName="amount"
         />
@@ -68,13 +74,21 @@
       </mat-form-field>
 
       <button
-        [disabled]="form.Invalid"
+        type="submit"
+        [disabled]="!form.valid"
         mat-raised-button
         color="accent"
         class="btn"
       >
         Пополнить счет
       </button>
-    </div>
+    </form>
   </div>
+</div>
+<div class="spinner">
+  <mat-progress-spinner
+    *ngIf="!isLoaded"
+    color="primary"
+    mode="indeterminate"
+  ></mat-progress-spinner>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Validators, FormGroup, FormBuilder, NgForm } from '@angular/forms';
 
 import { OperatorService } from '@services/OperatorService';
 import { Operator } from '@typings/index';
@@ -14,6 +15,7 @@ import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 export class OperatorComponent implements OnInit {
   operator: Operator;
   form: FormGroup;
+  isLoaded: boolean = false;
 
   mask = MASK;
   amountMask = AMOUNT_MASK;
@@ -21,11 +23,19 @@ export class OperatorComponent implements OnInit {
   constructor(
     private operatorService: OperatorService,
     private route: ActivatedRoute,
-    private fb: FormBuilder
+    private router: Router,
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
     const name = this.route.snapshot.params.name;
-    this.operator = operatorService.getOperator(name);
+    operatorService.getOperator(name).subscribe((data) => {
+      this.operator = data.operator;
+      this.createForm();
+      this.isLoaded = true;
+    });
+  }
 
+  createForm() {
     this.form = this.fb.group({
       phone: [
         '',
@@ -41,6 +51,22 @@ export class OperatorComponent implements OnInit {
         '',
         [Validators.required, Validators.min(1), Validators.max(1000)],
       ],
+    });
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 4000,
+      panelClass: ['mat-toolbar', 'mat-accent'],
+    });
+  }
+
+  fillBalance(f: NgForm) {
+    this.operatorService.fillBalance().subscribe((res) => {
+      this.openSnackBar('Payment', 'Success');
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 5000);
     });
   }
 
