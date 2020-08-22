@@ -1,15 +1,20 @@
 <div class="cards">
   <mat-card *ngFor="let operator of operators" class="card">
-    <div class="card_img_wrap">
+    <div class="card-img-wrap">
       <img class="card_img" mat-card-image [src]="operator.img" />
     </div>
     <mat-card-header>
-      <mat-card-subtitle class="card_subtitle">{{
+      <mat-card-subtitle class="card-subtitle">{{
         operator.subTitle
       }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions>
-      <button (click)="goTo(operator.name)" mat-raised-button color="accent">
+      <button
+        (click)="goTo(operator.name)"
+        mat-raised-button
+        color="accent"
+        class="btn"
+      >
         Пополнить счет
       </button>
     </mat-card-actions>

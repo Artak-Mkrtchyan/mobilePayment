@@ -11,7 +11,8 @@
       "@services/*": ["src/app/services/*"],
       "@typings/*": ["src/app/typings/*"],
       "@data/*": ["src/app/data/*"],
-      "@routes/*": ["src/app/routes/*"]
+      "@routes/*": ["src/app/routes/*"],
+      "@helpers/*": ["src/app/helpers/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

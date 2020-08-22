@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { TextMaskModule } from 'angular2-text-mask';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,6 +32,11 @@ import { appRoutes } from '@routes/index';
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
+    FormsModule,
+    TextMaskModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,

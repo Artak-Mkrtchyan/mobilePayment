@@ -1,25 +1,34 @@
-.cards 
+.cards
   display: flex
-  flex-wrap: wrap
   margin: 0 20px
-  justify-content: center
-
-.card 
+  justify-content: flex-start
+  margin-top: 20px
+  flex-wrap: wrap
+.card
   width: 200px
   margin: 10px
   background: #fff
   color: #424242
+  text-align: center
+  transition: all 500ms ease-in-out
+  &:hover
+    transform: scale(1.1)
 
-.card_img
+.card-img
   height: fit-content
 
-.card_img_wrap
+.card-img-wrap
   height: 200px
   padding: 20px
   display: flex
   align-items: center
 
-.card_subtitle
+.card-subtitle
   color: grey
   word-break: break-word
   width: 170px
+
+.btn
+  transition: all 500ms ease-in-out
+  &:hover
+    background-color: darken(#69f0ae, 20)

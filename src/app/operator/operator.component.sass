@@ -1,0 +1,61 @@
+.form-wrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  background: #ccc
+  justify-content: center
+  max-width: 500px
+  min-height: 300px
+  text-align: center
+  align-items: center
+  margin-top: 50px
+  padding: 10px
+  border-radius: 10px
+
+.form-header
+  margin-bottom: 10px
+
+  .form-header__img
+    display: block
+    max-height: 150px
+
+.form-body
+  z-index: 2
+
+.block
+  display: block
+
+.form-container
+  display: flex
+  flex-direction: column
+  width: 180px
+
+.example-tel-input-container
+  display: flex
+  width: 180px
+
+.example-tel-input-element
+  border: none
+  background: none
+  padding: 0
+  outline: none
+  font: inherit
+  text-align: right
+  width: 30px
+
+.example-tel-input-element:last-child
+  width: 40px
+
+.example-tel-input-spacer
+  transition: opacity 200ms
+
+.tel-default-code
+  margin-right: 5px
+
+:host.example-floating .tel-input-spacer
+  opacity: 1
+.btn
+  transition: all 500ms ease-in-out
+  &:hover
+    background-color: darken(#69f0ae, 20)
