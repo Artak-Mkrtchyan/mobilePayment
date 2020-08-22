@@ -8,4 +8,5 @@ export const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'operator/:name', component: OperatorComponent },
   { path: '**', component: NotFoundComponent },
+  { path: '404', component: NotFoundComponent },
 ];

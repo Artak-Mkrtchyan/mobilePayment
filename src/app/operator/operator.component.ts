@@ -28,11 +28,16 @@ export class OperatorComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     const name = this.route.snapshot.params.name;
-    operatorService.getOperator(name).subscribe((data) => {
-      this.operator = data.operator;
-      this.createForm();
-      this.isLoaded = true;
-    });
+    operatorService.getOperator(name).subscribe(
+      (data) => {
+        this.operator = data.operator;
+        this.createForm();
+        this.isLoaded = true;
+      },
+      (err) => {
+        this.router.navigate([`/404`]);
+      }
+    );
   }
 
   createForm() {
@@ -62,12 +67,17 @@ export class OperatorComponent implements OnInit {
   }
 
   fillBalance(f: NgForm) {
-    this.operatorService.fillBalance().subscribe((res) => {
-      this.openSnackBar('Payment', 'Success');
-      setTimeout(() => {
-        this.router.navigate(['/']);
-      }, 5000);
-    });
+    this.operatorService.fillBalance().subscribe(
+      (res) => {
+        this.openSnackBar('Payment', 'Success');
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 5000);
+      },
+      (err) => {
+        this.router.navigate([`/404`]);
+      }
+    );
   }
 
   ngOnInit(): void {}

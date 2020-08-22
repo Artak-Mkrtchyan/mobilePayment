@@ -19,8 +19,13 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.operator.getOperators().subscribe((data) => {
-      this.operators = data.operators;
-    });
+    this.operator.getOperators().subscribe(
+      (data) => {
+        this.operators = data.operators;
+      },
+      (err) => {
+        this.router.navigate([`/404`]);
+      }
+    );
   }
 }
