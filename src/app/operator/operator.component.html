@@ -52,9 +52,13 @@
         <input
           matInput
           placeholder="Amount"
+          name="amount"
           maxlength="4"
           formControlName="amount"
         />
+        <mat-error *ngIf="form.get('amount').hasError('required')">
+          <span>Amount is required</span>
+        </mat-error>
         <mat-error
           *ngIf="
             !form.get('amount').hasError('required') &&

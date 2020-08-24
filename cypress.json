@@ -1,0 +1,14 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "chromeWebSecurity": false,
+  "integrationFolder": "cypress/e2e",
+  "viewportWidth": 1280,
+  "viewportHeight": 1080,
+  "baseUrl": "http://localhost:4200",
+  "fixturesFolder": "cypress/fixtures",
+  "pluginsFile": "cypress/plugins/index.js",
+  "supportFile": "cypress/support/index.js",
+  "env": {
+    "port": "4200"
+  }
+}
