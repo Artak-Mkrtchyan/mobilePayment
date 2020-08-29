@@ -5,8 +5,7 @@ export function operatorCodeValidator(codes: number[]): ValidatorFn {
     let isValid = false;
     const currentCode = control.value && control.value.match(/\((\d+)\)/);
     if (currentCode && currentCode[1]) {
-      isValid =
-        codes.filter((item) => Number(currentCode[1]) === item).length === 1;
+      isValid = codes.filter((item) => Number(currentCode[1]) === item).length === 1;
     }
     return !isValid ? { isValidCode: { value: control.value } } : null;
   };

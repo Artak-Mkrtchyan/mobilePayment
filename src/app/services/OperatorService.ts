@@ -10,22 +10,14 @@ export class OperatorService {
   constructor(private http: HttpClient) {}
 
   getOperators(): Observable<{ operators: Operator[] }> {
-    return this.http.get<{ operators: Operator[] }>(
-      'http://localhost:3000/api'
-    );
+    return this.http.get<{ operators: Operator[] }>('http://localhost:3000/api');
   }
 
   getOperator(name: string): Observable<{ operator: Operator }> {
-    return this.http.post<{ operator: Operator }>(
-      'http://localhost:3000/api/operator',
-      { name }
-    );
+    return this.http.post<{ operator: Operator }>('http://localhost:3000/api/operator', { name });
   }
 
   fillBalance() {
-    return this.http.post<{ status: string }>(
-      'http://localhost:3000/api/fill_balance',
-      {}
-    );
+    return this.http.post<{ status: string }>('http://localhost:3000/api/fill_balance', {});
   }
 }

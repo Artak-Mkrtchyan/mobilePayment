@@ -25,12 +25,7 @@ import { OperatorService } from '@services/OperatorService';
 import { appRoutes } from '@routes/index';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainPageComponent,
-    OperatorComponent,
-    NotFoundComponent,
-  ],
+  declarations: [AppComponent, MainPageComponent, OperatorComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),

@@ -47,15 +47,10 @@ export class OperatorComponent implements OnInit {
         [
           Validators.required,
           operatorCodeValidator(this.operator.codes),
-          Validators.pattern(
-            /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
-          ),
+          Validators.pattern(/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm),
         ],
       ],
-      amount: [
-        '',
-        [Validators.required, Validators.min(1), Validators.max(1000)],
-      ],
+      amount: ['', [Validators.required, Validators.min(1), Validators.max(1000)]],
     });
   }
 
