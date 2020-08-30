@@ -8,7 +8,7 @@ import { Operator } from '@interfaces/index';
 import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 
 @Component({
-  selector: 'app-operator',
+  selector: 'app-operator-page',
   templateUrl: './operator-page.component.html',
   styleUrls: ['./operator-page.component.sass'],
 })
