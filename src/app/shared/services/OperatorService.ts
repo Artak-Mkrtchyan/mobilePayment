@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 
-import { Operator } from '@typings/index';
+import { Operator } from '@interfaces/index';
 
 @Injectable({ providedIn: 'root' })
 export class OperatorService {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { OperatorService } from '@services/OperatorService';
-import { Operator } from '@typings/index';
+import { Operator } from '@interfaces/index';
 
 @Component({
   selector: 'app-main-page',

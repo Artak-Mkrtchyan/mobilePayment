@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Validators, FormGroup, FormBuilder, NgForm } from '@angular/forms';
 
 import { OperatorService } from '@services/OperatorService';
-import { Operator } from '@typings/index';
+import { Operator } from '@interfaces/index';
 import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 
 @Component({
