@@ -16,16 +16,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from '@root/app.component';
-import { MainPageComponent } from '@root/main-page/main-page.component';
+import { MainPageComponent } from '@root/pages/main-page/main-page.component';
 import { NotFoundComponent } from '@root/not-found/not-found.component';
-import { OperatorComponent } from '@root/operator/operator.component';
+import { OperatorPageComponent } from '@root/pages/operator-page/operator-page.component';
 
 import { OperatorService } from '@services/OperatorService';
 
-import { appRoutes } from '@routes/index';
+import { appRoutes } from '@root/routes';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, OperatorComponent, NotFoundComponent],
+  declarations: [AppComponent, MainPageComponent, OperatorPageComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),

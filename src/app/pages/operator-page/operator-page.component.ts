@@ -9,10 +9,10 @@ import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 
 @Component({
   selector: 'app-operator',
-  templateUrl: './operator.component.html',
-  styleUrls: ['./operator.component.sass'],
+  templateUrl: './operator-page.component.html',
+  styleUrls: ['./operator-page.component.sass'],
 })
-export class OperatorComponent implements OnInit {
+export class OperatorPageComponent implements OnInit {
   operator: Operator;
   form: FormGroup;
   isLoaded = false;
