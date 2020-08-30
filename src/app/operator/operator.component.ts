@@ -15,7 +15,7 @@ import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 export class OperatorComponent implements OnInit {
   operator: Operator;
   form: FormGroup;
-  isLoaded: boolean = false;
+  isLoaded = false;
 
   mask = MASK;
   amountMask = AMOUNT_MASK;

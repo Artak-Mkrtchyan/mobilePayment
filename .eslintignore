@@ -1,0 +1,13 @@
+/cypress/**/*
+/src/environments/**/*
+
+package.json
+.eslintrc.json
+tsconfig.json
+tsconfig.spec.json
+tslint.json
+tsconfig.base.json
+tsconfig.app.json
+karma.conf.js
+cypress.json
+angular.json
