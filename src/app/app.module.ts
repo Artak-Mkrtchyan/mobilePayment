@@ -25,6 +25,7 @@ import { OperatorService } from '@services/OperatorService';
 import { appRoutes } from '@root/routes';
 import { HeaderComponent } from '@ui/components/header/header.component';
 import { MainLayoutComponent } from '@ui/wrappers/main-layout/main-layout.component';
+import { ButtonComponent } from './ui/components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MainLayoutComponent } from '@ui/wrappers/main-layout/main-layout.compon
     ErrorPageComponent,
     HeaderComponent,
     MainLayoutComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ export class OperatorPageComponent implements OnInit {
   operator: Operator;
   form: FormGroup;
   isLoaded = false;
+  buttonText: string = 'Пополнить счет';
 
   mask = MASK;
   amountMask = AMOUNT_MASK;

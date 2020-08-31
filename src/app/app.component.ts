@@ -6,12 +6,4 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
 })
-export class AppComponent {
-  title = 'Mobile Payment';
-
-  constructor(private router: Router) {}
-
-  goToMainPage(): void {
-    this.router.navigate([`/`]);
-  }
-}
+export class AppComponent {}

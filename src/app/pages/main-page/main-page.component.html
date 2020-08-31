@@ -4,19 +4,10 @@
       <img class="card_img" mat-card-image [src]="operator.img" />
     </div>
     <mat-card-header>
-      <mat-card-subtitle class="card-subtitle">{{
-        operator.subTitle
-      }}</mat-card-subtitle>
+      <mat-card-subtitle class="card-subtitle">{{ operator.subTitle }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions>
-      <button
-        (click)="goTo(operator.name)"
-        mat-raised-button
-        color="accent"
-        class="btn"
-      >
-        Пополнить счет
-      </button>
+      <app-button (onClick)="goTo(operator.name)" [disabled]="false" [text]="buttonText" [color]="accent"></app-button>
     </mat-card-actions>
   </mat-card>
 </div>

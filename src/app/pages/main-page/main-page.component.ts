@@ -11,6 +11,7 @@ import { Operator } from '@interfaces/index';
 })
 export class MainPageComponent implements OnInit {
   operators: Operator[];
+  buttonText: string = 'Пополнить счет';
 
   constructor(private operator: OperatorService, private router: Router) {}
 

@@ -4,13 +4,7 @@
   </div>
 
   <div class="form-body">
-    <form
-      [formGroup]="form"
-      #f="ngForm"
-      (ngSubmit)="fillBalance(f)"
-      class="container form-container"
-      fxLayout="column"
-    >
+    <form [formGroup]="form" #f="ngForm" (ngSubmit)="fillBalance(f)" class="container form-container" fxLayout="column">
       <mat-form-field>
         <mat-label>Phone number</mat-label>
         <div class="tel-input-container">
@@ -34,12 +28,7 @@
         >
           <span>Invalid phone</span>
         </mat-error>
-        <mat-error
-          *ngIf="
-            !form.get('phone').hasError('required') &&
-            form.get('phone').hasError('isValidCode')
-          "
-        >
+        <mat-error *ngIf="!form.get('phone').hasError('required') && form.get('phone').hasError('isValidCode')">
           <span>Invalid operator code</span>
         </mat-error>
         <mat-error *ngIf="form.get('phone').hasError('required')">
@@ -49,50 +38,22 @@
 
       <mat-form-field>
         <mat-label>Amount</mat-label>
-        <input
-          matInput
-          placeholder="Amount"
-          name="amount"
-          maxlength="4"
-          formControlName="amount"
-        />
+        <input matInput placeholder="Amount" name="amount" maxlength="4" formControlName="amount" />
         <mat-error *ngIf="form.get('amount').hasError('required')">
           <span>Amount is required</span>
         </mat-error>
-        <mat-error
-          *ngIf="
-            !form.get('amount').hasError('required') &&
-            form.get('amount').hasError('min')
-          "
-        >
+        <mat-error *ngIf="!form.get('amount').hasError('required') && form.get('amount').hasError('min')">
           <span>Should be not more than 1₽</span>
         </mat-error>
-        <mat-error
-          *ngIf="
-            !form.get('amount').hasError('required') &&
-            form.get('amount').hasError('max')
-          "
-        >
+        <mat-error *ngIf="!form.get('amount').hasError('required') && form.get('amount').hasError('max')">
           <span>Should be no less than 1000₽</span>
         </mat-error>
       </mat-form-field>
 
-      <button
-        type="submit"
-        [disabled]="!form.valid"
-        mat-raised-button
-        color="accent"
-        class="btn"
-      >
-        Пополнить счет
-      </button>
+      <app-button [disabled]="!form.valid" [text]="buttonText" [color]="accent"></app-button>
     </form>
   </div>
 </div>
 <div class="spinner">
-  <mat-progress-spinner
-    *ngIf="!isLoaded"
-    color="primary"
-    mode="indeterminate"
-  ></mat-progress-spinner>
+  <mat-progress-spinner *ngIf="!isLoaded" color="primary" mode="indeterminate"></mat-progress-spinner>
 </div>
