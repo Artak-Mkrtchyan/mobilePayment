@@ -23,9 +23,18 @@ import { OperatorPageComponent } from '@pages/operator-page/operator-page.compon
 import { OperatorService } from '@services/OperatorService';
 
 import { appRoutes } from '@root/routes';
+import { HeaderComponent } from '@ui/components/header/header.component';
+import { MainLayoutComponent } from '@ui/wrappers/main-layout/main-layout.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, OperatorPageComponent, ErrorPageComponent],
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    OperatorPageComponent,
+    ErrorPageComponent,
+    HeaderComponent,
+    MainLayoutComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),

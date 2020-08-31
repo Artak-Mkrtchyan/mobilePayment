@@ -9,6 +9,7 @@
     "paths": {
       "@root/*": ["src/app/*"],
       "@pages/*": ["src/app/pages/*"],
+      "@ui/*": ["src/app/ui/*"],
       "@services/*": ["src/app/shared/services/*"],
       "@interfaces/*": ["src/app/shared/interfaces/*"],
       "@routes/*": ["src/app/routes/*"],
