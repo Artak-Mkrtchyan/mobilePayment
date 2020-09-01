@@ -21,6 +21,7 @@ import { ErrorPageComponent } from '@pages/error-page/error-page.component';
 import { OperatorPageComponent } from '@pages/operator-page/operator-page.component';
 
 import { OperatorService } from '@services/OperatorService';
+import { HttpService } from '@services/HttpService';
 
 import { appRoutes } from '@root/routes';
 import { HeaderComponent } from '@ui/components/header/header.component';
@@ -55,7 +56,7 @@ import { ButtonComponent } from './ui/components/button/button.component';
     MatIconModule,
     RouterModule,
   ],
-  providers: [OperatorService],
+  providers: [OperatorService, HttpService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
