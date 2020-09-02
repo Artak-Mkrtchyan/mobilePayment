@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { OperatorService } from '@services/OperatorService';
+import { OperatorService } from '@services/operator.service';
 import { Operator } from '@interfaces/index';
 
 @Component({

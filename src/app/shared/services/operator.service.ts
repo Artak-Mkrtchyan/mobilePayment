@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { HttpService } from '@services/HttpService';
+import { HttpService } from '@services/http.service';
 import { Operator } from '@interfaces/index';
 
 @Injectable({ providedIn: 'root' })

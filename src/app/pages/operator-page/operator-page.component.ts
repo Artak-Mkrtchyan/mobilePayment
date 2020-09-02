@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Validators, FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { Store } from '@ngrx/store';
 
-import { OperatorService } from '@services/OperatorService';
+import { OperatorService } from '@services/operator.service';
 import { Operator } from '@interfaces/index';
 import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
+import { AppState } from '@store/state/app.state';
+import { open } from '@store/actions/snack-bar.action';
 
 @Component({
   selector: 'app-operator-page',
@@ -26,7 +28,7 @@ export class OperatorPageComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private snackBar: MatSnackBar
+    private store: Store<AppState>
   ) {
     const name = this.route.snapshot.params.name;
     operatorService.getOperator(name).subscribe(
@@ -55,17 +57,10 @@ export class OperatorPageComponent implements OnInit {
     });
   }
 
-  openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 4000,
-      panelClass: ['mat-toolbar', 'mat-accent'],
-    });
-  }
-
   fillBalance(f: NgForm) {
     this.operatorService.fillBalance().subscribe(
       (res) => {
-        this.openSnackBar('Payment', 'Success');
+        this.store.dispatch(open({ message: 'Success', action: 'Payment', duration: 3000, color: 'accent' }));
         setTimeout(() => {
           this.router.navigate(['/']);
         }, 5000);

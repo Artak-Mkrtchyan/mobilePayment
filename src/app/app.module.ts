@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { TextMaskModule } from 'angular2-text-mask';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -21,8 +22,12 @@ import { MainPageComponent } from '@pages/main-page/main-page.component';
 import { ErrorPageComponent } from '@pages/error-page/error-page.component';
 import { OperatorPageComponent } from '@pages/operator-page/operator-page.component';
 
-import { OperatorService } from '@services/OperatorService';
-import { HttpService } from '@services/HttpService';
+import { OperatorService } from '@services/operator.service';
+import { HttpService } from '@services/http.service';
+import { ErrorHandleService } from '@services/error-handle.service';
+import { SnackBarService } from '@services/snack-bar.service';
+
+import { SnackBarEffects } from '@store/effects/snack-bar.effects';
 
 import { appRoutes } from '@root/routes';
 import { HeaderComponent } from '@ui/components/header/header.component';
@@ -31,7 +36,7 @@ import { ButtonComponent } from '@ui/components/button/button.component';
 import { LoaderComponent } from '@ui/components/loader/loader.component';
 
 import { reducers } from '@store/reducers/app.reducers';
-import { MainLoaderComponent } from './ui/wrappers/main-loader/main-loader.component';
+import { MainLoaderComponent } from '@ui/wrappers/main-loader/main-loader.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ import { MainLoaderComponent } from './ui/wrappers/main-loader/main-loader.compo
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([SnackBarEffects]),
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
@@ -64,7 +70,7 @@ import { MainLoaderComponent } from './ui/wrappers/main-loader/main-loader.compo
     MatIconModule,
     RouterModule,
   ],
-  providers: [OperatorService, HttpService],
+  providers: [OperatorService, HttpService, ErrorHandleService, SnackBarService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
