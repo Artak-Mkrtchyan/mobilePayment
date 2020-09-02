@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 import { OperatorService } from '@services/operator.service';
 import { Operator } from '@interfaces/index';
+import { AppState } from '@store/state/app.state';
+import { show } from '@store/actions/loader.action';
+import { of, pipe, timer } from 'rxjs';
+import { delay, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-page',
@@ -13,10 +18,11 @@ export class MainPageComponent implements OnInit {
   operators: Operator[];
   buttonText: string = 'Пополнить счет';
 
-  constructor(private operator: OperatorService, private router: Router) {}
+  constructor(private operator: OperatorService, private router: Router, private store: Store<AppState>) {}
 
   goTo(operator: string): void {
-    this.router.navigate([`/operator/${operator}`]);
+    this.store.dispatch(show());
+    timer(2000).subscribe(() => this.router.navigate([`/operator/${operator}`]));
   }
 
   ngOnInit(): void {

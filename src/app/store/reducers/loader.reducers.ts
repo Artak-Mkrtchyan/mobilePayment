@@ -5,6 +5,6 @@ import { initialLoaderState } from '@store/state/loader.state';
 
 export const loaderReducer = createReducer(
   initialLoaderState,
-  on(show, (state) => state),
-  on(hide, (state) => state)
+  on(show, (state) => ({ ...state, active: true })),
+  on(hide, (state) => ({ ...state, active: false }))
 );

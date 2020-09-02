@@ -8,6 +8,7 @@ import { Operator } from '@interfaces/index';
 import { operatorCodeValidator, MASK, AMOUNT_MASK } from '@helpers/validator';
 import { AppState } from '@store/state/app.state';
 import { open } from '@store/actions/snack-bar.action';
+import { hide } from '@store/actions/loader.action';
 
 @Component({
   selector: 'app-operator-page',
@@ -17,10 +18,9 @@ import { open } from '@store/actions/snack-bar.action';
 export class OperatorPageComponent implements OnInit {
   operator: Operator;
   form: FormGroup;
-  isLoaded = false;
   buttonText: string = 'Пополнить счет';
-
   mask = MASK;
+  isLoaded: boolean = false;
   amountMask = AMOUNT_MASK;
 
   constructor(
@@ -36,6 +36,7 @@ export class OperatorPageComponent implements OnInit {
         this.operator = data.operator;
         this.createForm();
         this.isLoaded = true;
+        this.store.dispatch(hide());
       },
       (err) => {
         this.router.navigate([`/404`]);

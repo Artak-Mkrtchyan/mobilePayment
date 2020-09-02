@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { timeout, catchError, delay } from 'rxjs/operators';
 
 import { AppState } from '@store/state/app.state';
 import { getLoaderStatus } from '@store/selectors';
