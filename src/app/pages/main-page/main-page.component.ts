@@ -6,8 +6,7 @@ import { OperatorService } from '@services/operator.service';
 import { Operator } from '@interfaces/index';
 import { AppState } from '@store/state/app.state';
 import { show } from '@store/actions/loader.action';
-import { of, pipe, timer } from 'rxjs';
-import { delay, map, tap } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-main-page',
