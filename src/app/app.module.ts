@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 import { TextMaskModule } from 'angular2-text-mask';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -28,6 +29,10 @@ import { HeaderComponent } from '@ui/components/header/header.component';
 import { MainLayoutComponent } from '@ui/wrappers/main-layout/main-layout.component';
 import { ButtonComponent } from './ui/components/button/button.component';
 
+import { reducers } from './store/reducers/app.reducers';
+import { initialAppState } from './store/state/app.state';
+import { LoaderComponent } from './ui/components/loader/loader.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +42,12 @@ import { ButtonComponent } from './ui/components/button/button.component';
     HeaderComponent,
     MainLayoutComponent,
     ButtonComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    StoreModule.forRoot(reducers),
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
