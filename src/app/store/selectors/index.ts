@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 
-import { AppState } from '../state/app.state';
-import { LoaderState } from '../state/loader.state';
+import { AppState } from '@store/state/app.state';
+import { LoaderState } from '@store/state/loader.state';
 
 const getLoader = (state: AppState) => state.loader;
 

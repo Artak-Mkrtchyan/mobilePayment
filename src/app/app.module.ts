@@ -27,11 +27,11 @@ import { HttpService } from '@services/HttpService';
 import { appRoutes } from '@root/routes';
 import { HeaderComponent } from '@ui/components/header/header.component';
 import { MainLayoutComponent } from '@ui/wrappers/main-layout/main-layout.component';
-import { ButtonComponent } from './ui/components/button/button.component';
+import { ButtonComponent } from '@ui/components/button/button.component';
+import { LoaderComponent } from '@ui/components/loader/loader.component';
 
-import { reducers } from './store/reducers/app.reducers';
-import { initialAppState } from './store/state/app.state';
-import { LoaderComponent } from './ui/components/loader/loader.component';
+import { reducers } from '@store/reducers/app.reducers';
+import { MainLoaderComponent } from './ui/wrappers/main-loader/main-loader.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,7 @@ import { LoaderComponent } from './ui/components/loader/loader.component';
     MainLayoutComponent,
     ButtonComponent,
     LoaderComponent,
+    MainLoaderComponent,
   ],
   imports: [
     BrowserModule,

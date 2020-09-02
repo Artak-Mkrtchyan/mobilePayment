@@ -13,7 +13,8 @@
       "@services/*": ["src/app/shared/services/*"],
       "@interfaces/*": ["src/app/shared/interfaces/*"],
       "@routes/*": ["src/app/routes/*"],
-      "@helpers/*": ["src/app/helpers/*"]
+      "@helpers/*": ["src/app/helpers/*"],
+      "@store/*": ["src/app/store/*"]
     }
   },
   "files": ["src/main.ts", "src/polyfills.ts"],

@@ -1,4 +1,4 @@
-import { initialLoaderState, LoaderState } from './loader.state';
+import { initialLoaderState, LoaderState } from '@store/state/loader.state';
 
 export interface AppState {
   loader: LoaderState;
